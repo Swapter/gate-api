@@ -59,6 +59,12 @@ public class SubAccountKey {
     private String updatedAt;
 
 
+
+    public static final String SERIALIZED_NAME_SECRET = "secret";
+    @SerializedName(SERIALIZED_NAME_SECRET)
+    private String secret;
+
+
      /**
      * User ID
      * @return userId
@@ -184,6 +190,12 @@ public class SubAccountKey {
         return updatedAt;
     }
 
+
+    @javax.annotation.Nullable
+    public String getSecret() {
+        return secret;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -200,12 +212,13 @@ public class SubAccountKey {
                 Objects.equals(this.key, subAccountKey.key) &&
                 Objects.equals(this.state, subAccountKey.state) &&
                 Objects.equals(this.createdAt, subAccountKey.createdAt) &&
-                Objects.equals(this.updatedAt, subAccountKey.updatedAt);
+                Objects.equals(this.updatedAt, subAccountKey.updatedAt)&&
+                Objects.equals(this.secret, subAccountKey.secret);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(userId, name, perms, ipWhitelist, key, state, createdAt, updatedAt);
+        return Objects.hash(userId, name, perms, ipWhitelist, key, state, createdAt, updatedAt, secret);
     }
 
 
@@ -221,6 +234,7 @@ public class SubAccountKey {
         sb.append("      state: ").append(toIndentedString(state)).append("\n");
         sb.append("      createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("      updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+        sb.append("      secret: ").append(toIndentedString(secret)).append("\n");
         sb.append("}");
         return sb.toString();
     }

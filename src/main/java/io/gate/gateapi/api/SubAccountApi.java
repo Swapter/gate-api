@@ -586,8 +586,8 @@ public class SubAccountApi {
         <tr><td> 200 </td><td> Created Successfully </td><td>  -  </td></tr>
      </table>
      */
-    public List<SubAccountKey> createSubAccountKeys(Long userId, SubAccountKey subAccountKey) throws ApiException {
-        ApiResponse<List<SubAccountKey>> localVarResp = createSubAccountKeysWithHttpInfo(userId, subAccountKey);
+    public SubAccountKey createSubAccountKeys(Long userId, SubAccountKey subAccountKey) throws ApiException {
+        ApiResponse<SubAccountKey> localVarResp = createSubAccountKeysWithHttpInfo(userId, subAccountKey);
         return localVarResp.getData();
     }
 
@@ -604,9 +604,9 @@ public class SubAccountApi {
         <tr><td> 200 </td><td> Created Successfully </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<SubAccountKey>> createSubAccountKeysWithHttpInfo(Long userId, SubAccountKey subAccountKey) throws ApiException {
+    public ApiResponse <SubAccountKey> createSubAccountKeysWithHttpInfo(Long userId, SubAccountKey subAccountKey) throws ApiException {
         okhttp3.Call localVarCall = createSubAccountKeysValidateBeforeCall(userId, subAccountKey, null);
-        Type localVarReturnType = new TypeToken<List<SubAccountKey>>(){}.getType();
+        Type localVarReturnType = new TypeToken<SubAccountKey>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
