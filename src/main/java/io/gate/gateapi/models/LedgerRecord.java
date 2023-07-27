@@ -61,6 +61,8 @@ public class LedgerRecord {
     @JsonAdapter(StatusEnum.Adapter.class)
     public enum StatusEnum {
         DONE("DONE"),
+
+        LOCKED("LOCKED"),
         
         CANCEL("CANCEL"),
         
